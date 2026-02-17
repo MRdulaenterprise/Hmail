@@ -6,7 +6,7 @@
 
 2. **Build & start**
    - Railway uses **Nixpacks** with this repo’s config:
-     - **Build:** `npm run build` (builds email index if present, then the client with Vite).
+     - **Build:** `npm run build:client` (builds the Vite client only; no source XML needed—use `Clinton Emails.json` in the repo for data).
      - **Start:** `npm start` (runs `node server/index.js`).
    - `PORT` is set by Railway; the app uses `process.env.PORT || 3000`.
 
