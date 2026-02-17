@@ -1,0 +1,137 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+.modal-dialog {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 32px rgba(60, 64, 67, 0.25);
+  max-width: 480px;
+  width: 100%;
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+.modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+.modal-lead {
+  margin: 0 0 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+}
+.modal-body {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.modal-made-by {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+.modal-parsing {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.modal-doc-icon {
+  display: inline-flex;
+  color: var(--color-text-secondary);
+}
+.modal-parsing a,
+.modal-support a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.modal-parsing a:hover,
+.modal-support a:hover {
+  text-decoration: underline;
+}
+.modal-support {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+}
+
+.modal-switch-section {
+  margin: 0 0 1rem;
+}
+
+.modal-switch-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.modal-switch-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+}
+
+.modal-switch-list li {
+  margin-bottom: 0.25rem;
+}
+
+.modal-switch-list a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.modal-switch-list a:hover {
+  text-decoration: underline;
+}
+
+.modal-legal {
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.modal-legal-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.modal-legal-text {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}

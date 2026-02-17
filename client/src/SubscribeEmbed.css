@@ -1,0 +1,46 @@
+.subscribe-embed-wrap {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subscribe-embed-brought-by {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  opacity: 0.9;
+}
+
+.subscribe-embed-iframe-wrap {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.subscribe-embed-iframe {
+  display: block;
+  border: none;
+  background: white;
+  max-width: 100%;
+}
+
+@media (max-width: 560px) {
+  .subscribe-embed-iframe-wrap {
+    margin-left: calc(-1 * var(--spacing-xl));
+    margin-right: calc(-1 * var(--spacing-xl));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .subscribe-embed-iframe {
+    width: 100% !important;
+    min-width: 100%;
+  }
+}

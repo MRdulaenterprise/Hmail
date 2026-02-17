@@ -1,0 +1,49 @@
+/* Design tokens */
+:root {
+  --color-primary: #1a73e8;
+  --color-primary-text: #1967d2;
+  --color-surface: #fff;
+  --color-surface-elevated: #fff;
+  --color-surface-hover: #f8f9fa;
+  --color-surface-active: #e8f0fe;
+  --color-border: #dadce0;
+  --color-border-subtle: #e8eaed;
+  --color-border-light: #f1f3f4;
+  --color-text-primary: #202124;
+  --color-text-secondary: #5f6368;
+  --color-skeleton: #f1f3f4;
+  --color-skeleton-shine: #e8eaed;
+  --radius-card: 8px;
+  --radius-pill: 24px;
+  --radius-button: 8px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.25rem;
+  --shadow-card: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  --header-height: 56px;
+  /* Jmail-style chrome: blue-gray nav + white main */
+  --chrome-bg: #f0f4f9;
+  --chrome-hover: #e8ecf1;
+  --chrome-active: #d2e3fc;
+  --main-bg: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Google Sans', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+}
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

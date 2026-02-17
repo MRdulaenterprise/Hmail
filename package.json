@@ -1,0 +1,21 @@
+{
+  "name": "hmail",
+  "version": "1.0.0",
+  "description": "Gmail-style Hillary Clinton email browser",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:index && npm run build:client",
+    "build:index": "node scripts/build-email-index.js",
+    "build:client": "cd client && npm install && npm run build",
+    "start": "node server/index.js",
+    "dev": "node scripts/dev.js",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "cd client && npm run dev"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

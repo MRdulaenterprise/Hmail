@@ -1,0 +1,116 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: 0 var(--spacing-xl);
+  min-height: var(--header-height);
+  height: var(--header-height);
+  background: var(--chrome-bg);
+  flex-shrink: 0;
+}
+.header-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  color: inherit;
+}
+.header-brand-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+.header-brand-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #5f6368;
+  letter-spacing: -0.02em;
+}
+.header-center {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--spacing-lg);
+}
+
+.search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.search-wrap .search-bar {
+  width: 100%;
+}
+
+.search-wrap:has(.search-dropdown) .search-bar {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+.header-icon-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  border-radius: 50%;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icon-btn:hover {
+  background: var(--chrome-hover);
+  color: var(--color-text-primary);
+}
+.header-icon-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.header-profile-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: var(--spacing-xs);
+  cursor: pointer;
+  background: none;
+  display: block;
+}
+.header-profile-btn:hover {
+  opacity: 0.9;
+}
+.header-profile-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.header-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header-center {
+    padding: 0 var(--spacing-sm);
+  }
+  .header-right .header-icon-btn:not([aria-label="Help"]) {
+    display: none;
+  }
+}
