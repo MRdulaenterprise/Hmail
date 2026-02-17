@@ -68,14 +68,26 @@ export default function Sidebar({
   inboxCount,
   sentCount,
   starredCount,
+  mobileOpen = false,
+  onCloseSidebar,
 }) {
   const [peopleOpen, setPeopleOpen] = useState(true);
   const [topicsOpen, setTopicsOpen] = useState(true);
 
+  const handleNav = (fn) => {
+    if (typeof fn === 'function') fn();
+    onCloseSidebar?.();
+  };
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${mobileOpen ? 'sidebar-drawer-open' : ''}`} aria-hidden={mobileOpen ? false : undefined}>
       <div className="sidebar-header">
-        <button type="button" className="sidebar-menu-btn" aria-label="Menu">
+        <button
+          type="button"
+          className="sidebar-menu-btn"
+          aria-label={mobileOpen ? 'Close menu' : 'Menu'}
+          onClick={onCloseSidebar || undefined}
+        >
           <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </button>
         <img src="/favicon.svg" alt="" className="sidebar-favicon" />
@@ -88,7 +100,7 @@ export default function Sidebar({
       <nav className="sidebar-nav">
         <button
           className={`nav-item ${folder === 'inbox' && !person ? 'active' : ''}`}
-          onClick={() => { setFolder('inbox'); setPerson(''); }}
+          onClick={() => handleNav(() => { setFolder('inbox'); setPerson(''); })}
         >
           <IconInbox />
           <span className="nav-label">Inbox</span>
@@ -96,7 +108,7 @@ export default function Sidebar({
         </button>
         <button
           className={`nav-item ${folder === 'starred' ? 'active' : ''}`}
-          onClick={() => setFolder('starred')}
+          onClick={() => handleNav(() => setFolder('starred'))}
         >
           <IconStar />
           <span className="nav-label">Starred</span>
@@ -104,7 +116,7 @@ export default function Sidebar({
         </button>
         <button
           className={`nav-item ${folder === 'sent' ? 'active' : ''}`}
-          onClick={() => { setFolder('sent'); setPerson(''); }}
+          onClick={() => handleNav(() => { setFolder('sent'); setPerson(''); })}
         >
           <IconSend />
           <span className="nav-label">Sent</span>
@@ -112,7 +124,7 @@ export default function Sidebar({
         </button>
         <button
           className={`nav-item ${folder === 'activity' ? 'active' : ''}`}
-          onClick={() => { setFolder('activity'); setPerson(''); }}
+          onClick={() => handleNav(() => { setFolder('activity'); setPerson(''); })}
         >
           <IconActivity />
           <span className="nav-label">Daily Activity</span>
@@ -132,11 +144,11 @@ export default function Sidebar({
                 key={t.id}
                 type="button"
                 className="topic-item"
-                onClick={() => {
+                onClick={() => handleNav(() => {
                   setFolder('inbox');
                   setPerson('');
                   setSearchQuery?.(TOPIC_SEARCH[t.id] ?? t.label);
-                }}
+                })}
                 title={`Search for "${TOPIC_SEARCH[t.id] ?? t.label}"`}
               >
                 <span className="topic-label">{t.label}</span>
@@ -155,15 +167,15 @@ export default function Sidebar({
         {peopleOpen && (
           <div className="people-list-wrapper">
           <div className="people-list">
-            <button type="button" className="people-browse-link" onClick={() => { setPerson(''); setFolder('people'); }}>Browse all people →</button>
+            <button type="button" className="people-browse-link" onClick={() => handleNav(() => { setPerson(''); setFolder('people'); })}>Browse all people →</button>
             {people.slice(0, 250).map((p) => (
               <button
                 key={(p.display || p.name || '').slice(0, 50)}
                 className={`people-item ${person && (p.display || p.name || '').trim() === person.trim() ? 'active' : ''}`}
-                onClick={() => {
+                onClick={() => handleNav(() => {
                   setPerson(p.display || p.name || '');
                   setFolder('inbox');
-                }}
+                })}
               >
                 <span className="people-name">{(p.display || p.name || '').slice(0, 40)}</span>
                 {p.count != null && <span className="people-count">{p.count}</span>}

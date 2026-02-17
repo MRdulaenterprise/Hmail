@@ -12,6 +12,7 @@ export default function HeaderToolbar({
   onSelectSearchResult,
   onHelpClick,
   onProfileClick,
+  onMenuClick,
   profileImageUrl,
 }) {
   const [searchFocused, setSearchFocused] = useState(false);
@@ -36,6 +37,16 @@ export default function HeaderToolbar({
 
   return (
     <header className="app-header">
+      <div className="header-left">
+        <button
+          type="button"
+          className="header-menu-btn"
+          aria-label="Menu"
+          onClick={onMenuClick}
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+      </div>
       <div className="header-center">
         <div className="search-wrap" ref={searchWrapRef}>
           <SearchBar

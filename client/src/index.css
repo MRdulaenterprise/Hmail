@@ -41,6 +41,13 @@ body {
   font-size: 14px;
   color: var(--color-text-primary);
   background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
 }
 #root {
   min-height: 100vh;

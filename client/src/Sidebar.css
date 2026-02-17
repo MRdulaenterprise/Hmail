@@ -6,6 +6,26 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: min(280px, 85vw);
+    min-width: 0;
+    z-index: 1001;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-out;
+    box-shadow: none;
+  }
+  .sidebar.sidebar-drawer-open {
+    transform: translateX(0);
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.15);
+  }
 }
 .sidebar-header {
   flex-shrink: 0;
@@ -270,34 +290,34 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    min-width: 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   .sidebar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem;
+    flex-direction: column;
   }
   .nav-item {
-    border-radius: 1rem;
-    margin-right: 0;
-  }
-  .sidebar-section {
-    width: 100%;
+    border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+    margin-right: var(--spacing-sm);
+    min-height: 48px;
   }
   .sidebar-section-people {
-    flex: none;
-    max-height: 50vh;
+    flex: 1 1 0;
+    max-height: none;
   }
   .people-list-wrapper {
-    flex: none;
-    max-height: 40vh;
+    max-height: none;
   }
   .people-list {
-    flex: none;
-    max-height: 38vh;
+    max-height: none;
+  }
+  .sidebar-compose {
+    min-height: 48px;
+  }
+  .section-header {
+    min-height: 44px;
+  }
+  .topic-item,
+  .people-item,
+  .people-browse-link {
+    min-height: 44px;
+    padding: 0.5rem var(--spacing-lg);
   }
 }

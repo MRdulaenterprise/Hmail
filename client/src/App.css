@@ -38,8 +38,31 @@
   border-top: 1px solid var(--color-border-subtle);
 }
 
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 769px) {
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .app-body {
-    flex-direction: column;
+    flex-direction: row;
+    position: relative;
+  }
+  .app-main-column {
+    width: 100%;
+    min-width: 0;
+  }
+  .main {
+    min-height: 0;
   }
 }

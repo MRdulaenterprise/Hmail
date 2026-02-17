@@ -180,7 +180,15 @@ export default function App() {
   const starredCount = starredIds.size;
   const [showWhatIsThisModal, setShowWhatIsThisModal] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const profileImageUrl = '/hillary_clinton.jpg';
+
+  useEffect(() => {
+    if (sidebarOpen && typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches) {
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = ''; };
+    }
+  }, [sidebarOpen]);
 
   return (
     <div className="app">
@@ -191,6 +199,16 @@ export default function App() {
         <ProfileModal profileImageUrl={profileImageUrl} onClose={() => setShowProfileModal(false)} />
       )}
       <div className="app-body">
+        {sidebarOpen && (
+          <div
+            className="sidebar-overlay"
+            onClick={() => setSidebarOpen(false)}
+            onKeyDown={(e) => e.key === 'Escape' && setSidebarOpen(false)}
+            role="button"
+            tabIndex={0}
+            aria-label="Close menu"
+          />
+        )}
         <Sidebar
           folder={folder}
           setFolder={setFolder}
@@ -201,6 +219,8 @@ export default function App() {
           inboxCount={inboxCount}
           sentCount={sentCount}
           starredCount={starredCount}
+          mobileOpen={sidebarOpen}
+          onCloseSidebar={() => setSidebarOpen(false)}
         />
         <div className="app-main-column">
           <HeaderToolbar
@@ -212,6 +232,7 @@ export default function App() {
             onSelectSearchResult={handleSelectEmail}
             onHelpClick={() => setShowWhatIsThisModal(true)}
             onProfileClick={() => setShowProfileModal(true)}
+            onMenuClick={() => setSidebarOpen(true)}
             profileImageUrl={profileImageUrl}
           />
           <main className="main">
