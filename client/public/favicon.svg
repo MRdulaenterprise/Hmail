@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#fff"/>
-  <!-- Gmail-style M: red | yellow \ blue | green -->
-  <path fill="#ea4335" d="M7 22V10h4l5 6 5-6h4v12h-4V16l-5 6-5-6v6H7z"/>
-  <path fill="#fbbc04" d="M11 10l5 6v6h-2v-4l-3-4V10z"/>
-  <path fill="#4285f4" d="M16 16l5-6h2v12h-2v-4l-3 2V16z"/>
-  <path fill="#34a853" d="M21 10v6l-5 6v-6l5-6z"/>
+  <!-- Gmail-style "M": four colored segments -->
+  <path fill="#ea4335" d="M7 22V10h4.5l4.5 6 4.5-6H25v12h-4.5v-6l-4.5 5-4.5-5v6H7z"/>
+  <path fill="#fbbc04" d="M11.5 10l4.5 6v6h-2.25V15l-2.25-3 2.25-2V10z"/>
+  <path fill="#4285f4" d="M16 16l4.5-6H22.75v12H20.5l-2.25-3v3H16V16z"/>
+  <path fill="#34a853" d="M20.5 10v5.25L16 21v-6l4.5-5H20.5z"/>
 </svg>
