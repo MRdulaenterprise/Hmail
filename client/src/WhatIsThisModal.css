@@ -53,6 +53,35 @@
   color: var(--color-text-secondary);
   line-height: 1.5;
 }
+.modal-sources {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.modal-sources-intro {
+  margin: 0 0 0.5rem;
+}
+.modal-sources-intro strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+.modal-sources-links {
+  margin: 0 0 0.5rem;
+}
+.modal-contribute {
+  margin: 0;
+}
+.modal-sources a,
+.modal-contribute a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.modal-sources a:hover,
+.modal-contribute a:hover {
+  text-decoration: underline;
+}
+
 .modal-made-by {
   margin: 0 0 0.75rem;
   font-size: 0.875rem;

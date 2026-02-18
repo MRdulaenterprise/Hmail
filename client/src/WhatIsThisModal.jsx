@@ -21,8 +21,17 @@ export default function WhatIsThisModal({ onClose }) {
         <h2 id="what-is-this-title" className="modal-title">What is this?</h2>
         <p className="modal-lead">You're browsing Hillary Clinton's Private Email Inbox.</p>
         <p className="modal-body">
-          Data was compiled from (FBI seizure + State Department/FOIA releases) and (2) later repackaging by sites like WikiLeaks.
+          Data was compiled from (FBI seizure + State Department/FOIA releases) and later repackaging by sites like WikiLeaks. No new leaks, hacks, or private data beyond official releases are included.
         </p>
+        <div className="modal-sources">
+          <p className="modal-sources-intro">This resource includes only the files from the <strong>August 31 release</strong>.</p>
+          <p className="modal-sources-links">
+            Source files: <a href="https://archive.org/download/hillary-clinton-emails-august-31-release" target="_blank" rel="noopener noreferrer">Internet Archive (August 31 release)</a>. The full record is in the <a href="https://foia.state.gov/FOIALIBRARY/SearchResults.aspx?collection=Clinton_Email*,HRC*,Litigation_HRC*,Litigation_F-2015-07895*,Powell_9-23-2016,Nov03_2016,Nov04_2016,FOIA_Jan2020,FOIA_Feb2020,FOIA_L_May2023_1" target="_blank" rel="noopener noreferrer">U.S. Department of State FOIA Library</a>.
+          </p>
+          <p className="modal-contribute">
+            To contribute or get in touch, contact me on X: <a href="https://x.com/RealMRDula" target="_blank" rel="noopener noreferrer">@RealMRDula</a>.
+          </p>
+        </div>
         <p className="modal-made-by">
           Made by The Dula Dispatch.{' '}
           <a href="https://mrdula.substack.com/" target="_blank" rel="noopener noreferrer">Learn more →</a>
